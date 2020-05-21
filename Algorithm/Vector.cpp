@@ -3,19 +3,19 @@
 using namespace std;
 
 /*
-¸â¹ö ÇÔ¼ö
-v.begin();		½ÃÀÛÁ¡ iterator·Î ¹İÈ¯
-v.end();		³¡Á¡ iterator·Î ¹İÈ¯
+ë©¤ë²„ í•¨ìˆ˜
+v.begin();		ì‹œì‘ì  iteratorë¡œ ë°˜í™˜
+v.end();		ëì  iteratorë¡œ ë°˜í™˜
 
-v.size();		size¹İÈ¯
-v.max_size();	´ãÀ» ¼ö ÀÖ´Â ÃÖ´ë ¿ø¼ÒÀÇ °³¼ö ¹İÈ¯
-v.capacity();	¸Ş¸ğ¸® Å©±â ¹İÈ¯
-v.resize();		sizeÀç¼³Á¤
-v.empty();		ºñ¾îÀÖ´ÂÁö È®ÀÎ
-v.reserve();	¸Ş¸ğ¸® ¹Ì¸®ÇÒ´ç
+v.size();		sizeë°˜í™˜
+v.max_size();		ë‹´ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€ ì›ì†Œì˜ ê°œìˆ˜ ë°˜í™˜
+v.capacity();		ë©”ëª¨ë¦¬ í¬ê¸° ë°˜í™˜
+v.resize();		sizeì¬ì„¤ì •
+v.empty();		ë¹„ì–´ìˆëŠ”ì§€ í™•ì¸
+v.reserve();		ë©”ëª¨ë¦¬ ë¯¸ë¦¬í• ë‹¹
 v.clear();
 
-v.assign();		°ª ÇÒ´ç
+v.assign();		ê°’ í• ë‹¹
 v.at();
 v.push_back();
 v.pop_back();
@@ -63,31 +63,31 @@ void VectorAssign(vector<int> v) {
 }
 
 void VectorLoop(vector<int> v) {
-	vector<int>::iterator it; //¹İº¹ÀÚ(iterator)
-	for (it = v.begin(); it != v.end(); it++) {	//iterator¸¦ ÅëÇÑ Á¢±Ù
+	vector<int>::iterator it; //ë°˜ë³µì(iterator)
+	for (it = v.begin(); it != v.end(); it++) {	//iteratorë¥¼ í†µí•œ ì ‘ê·¼
 		cout << *it;
 	}
 	cout << endl;
 	
-	vector<int>::reverse_iterator rit;	//¿ª¹İº¹ÀÚ(reverse_iterator)
+	vector<int>::reverse_iterator rit;	//ì—­ë°˜ë³µì(reverse_iterator)
 	for (rit = v.rbegin(); rit != v.rend(); rit++) {
 		cout << *rit;
 	}
 	cout << endl;
 	int i;
 	vector<int>::iterator it2 = v.begin();
-	for (i = 0; i < v.size(); i++) {	//[]¸¦ ÅëÇÑ Á¢±Ù
+	for (i = 0; i < v.size(); i++) {	//[]ë¥¼ í†µí•œ ì ‘ê·¼
 		cout << it2[i];
 	}
 	cout << endl;
 
-	for (i = 0; i < v.size(); i++) {	//[]¸¦ ÅëÇÑ Á¢±Ù
+	for (i = 0; i < v.size(); i++) {	//[]ë¥¼ í†µí•œ ì ‘ê·¼
 		cout << v[i];
 	}
 	cout << endl;
 }
 
-void VectorDestructor() {	//vector ¸Ş¸ğ¸®ÇØÁ¦
+void VectorDestructor() {	//vector ë©”ëª¨ë¦¬í•´ì œ
 	vector<int> vi(5, 1);
 	vi.resize(7);
 	PrintVector(vi);
@@ -102,9 +102,9 @@ void VectorDestructor() {	//vector ¸Ş¸ğ¸®ÇØÁ¦
 	vi.reserve(5);
 	cout << vi.size() << " " << vi.capacity() << endl; //size:0 capacity:5
 
-	//resizeÈÄ shrink_to_fit
+	//resizeí›„ shrink_to_fit
 	vi.resize(0);
-	vi.shrink_to_fit();	//swapÀ» ¹æ¹ıÀ» ´ëÃ¼. (c++11)
+	vi.shrink_to_fit();	//swapì„ ë°©ë²•ì„ ëŒ€ì²´. (c++11)
 	cout << vi.size() << " " << vi.capacity() << endl; //size:0 capacity:0
 	
 }
