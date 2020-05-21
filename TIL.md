@@ -20,3 +20,35 @@ TIL (2020.05.20~)
 - [explicit키워드 이해하기](https://dydtjr1128.github.io/cpp/2019/07/13/Cpp-explicit-keyowrd.html)
 ### 3. markdown
 - [markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+
+## 2020.05.21
+
+### 1. STL vector
+- vector 메모리 해제방법추가(C+11)   
+  ```
+  vector<int> v(5, 1);  //{1, 1, 1, 1, 1}
+  v.resize(0)
+  v.shrink_to_fit();
+  ```
+- push_back과 emplace_back차이   
+  [차이설명](https://shaeod.tistory.com/630)
+### 2. C++ 동적할당
+- new 연산자
+- delete 연산자
+  ```
+  int var = new int;
+  delete var;
+  int arr = new int[10];
+  delete[] arr;
+  int *arr2[5] = new int[10][5];  //변수 사용x
+  delete[] arr2;
+  
+  int **arr3 = new int*[10];
+  for (int i = 0; i < 10; i++)
+    mat[i] = new int[10];
+  for (int i = 0; i < r; i++)
+    delete [] arr3[i];
+  delete [] arr3;
+  ```
+### 3. C++ 특수멤버함수
+- [특수 멤버함수와 defalut, delete키워드](http://egloos.zum.com/sweeper/v/2995404)
