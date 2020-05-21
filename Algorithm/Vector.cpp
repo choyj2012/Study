@@ -17,7 +17,8 @@ v.clear();
 
 v.assign();		값 할당
 v.at();
-v.push_back();
+v.push_back();		=emplace_back();
+v.insert();		=emplace();
 v.pop_back();
 */
 void VectorLoop(vector<int> v);
