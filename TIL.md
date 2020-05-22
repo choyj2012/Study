@@ -57,10 +57,10 @@ TIL (2020.05.20~)
 
 ### Stack
 -LIFO(Last In First Out)
--함수목록
-CreateStack - 스택 생성
-StackPush - 원소 삽입
-StackPop - 원소 삭제
-Top - top 원소 반환
-isEmpty - 스택이 비었는지 여부
-isFull - 스택이 가득 찼는지 여부
+-함수목록   
+CreateStack - 스택 생성   
+StackPush - 원소 삽입   
+StackPop - 원소 삭제   
+Top - top 원소 반환   
+isEmpty - 스택이 비었는지 여부   
+isFull - 스택이 가득 찼는지 여부   
