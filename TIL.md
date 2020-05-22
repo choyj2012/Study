@@ -55,9 +55,9 @@ TIL (2020.05.20~)
 
 ## 2020.05.22
 
-### Stack
--LIFO(Last In First Out)
--함수목록   
+### 1. Stack
+- LIFO(Last In First Out)
+- 함수목록   
 CreateStack - 스택 생성   
 StackPush - 원소 삽입   
 StackPop - 원소 삭제   
