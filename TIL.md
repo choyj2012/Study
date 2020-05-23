@@ -64,3 +64,10 @@ StackPop - 원소 삭제
 Top - top 원소 반환   
 isEmpty - 스택이 비었는지 여부   
 isFull - 스택이 가득 찼는지 여부   
+
+## 2020.5.23
+##### (다풀었는데 12시지남ㅠㅠ)
+### 1. BOJ문제풀이
+- [BOJ2292](https://www.acmicpc.net/problem/2292)
+- [BOJ2879](https://www.acmicpc.net/problem/2879)
+- [BOJ3000](https://www.acmicpc.net/problem/3000)
