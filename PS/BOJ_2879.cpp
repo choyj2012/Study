@@ -1,3 +1,5 @@
+//https://www.acmicpc.net/problem/2879
+
 #include <stdio.h>
 #include <math.h>
 #define N 1010

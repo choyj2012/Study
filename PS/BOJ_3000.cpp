@@ -1,3 +1,5 @@
+//https://www.acmicpc.net/problem/3000
+
 #include <stdio.h>
 #define N 10
 
