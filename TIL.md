@@ -58,12 +58,12 @@ TIL (2020.05.20~)
 ### 1. Stack
 - LIFO(Last In First Out)
 - 함수목록   
-CreateStack - 스택 생성   
+~~CreateStack - 스택 생성   
 StackPush - 원소 삽입   
 StackPop - 원소 삭제   
 Top - top 원소 반환   
 isEmpty - 스택이 비었는지 여부   
-isFull - 스택이 가득 찼는지 여부   
+isFull - 스택이 가득 찼는지 여부~~
 
 ## 2020.5.23
 ##### (다풀었는데 12시지남ㅠㅠ)
@@ -79,3 +79,10 @@ isFull - 스택이 가득 찼는지 여부
 
 ## 2020.5.25
 ### 1. Stack구현중(C++)
+
+## 2020.5.26
+### 1. Stack구현끝
+- C++ template
+- Class 멤버함수 외부선언
+- 동적할당 & delete
+- nullptr
