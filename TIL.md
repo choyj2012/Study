@@ -72,7 +72,10 @@ isFull - 스택이 가득 찼는지 여부
 - [BOJ2879](https://www.acmicpc.net/problem/2879)
 - [BOJ3000](https://www.acmicpc.net/problem/3000)
 
-## 2020.5.23
+## 2020.5.24
 ### 1. BOJ문제풀이
 - [BOJ1874](https://www.acmicpc.net/problem/1874)
 - [BOJ2193](https://www.acmicpc.net/problem/2193)
+
+## 2020.5.25
+### 1. Stack구현중(C++)
