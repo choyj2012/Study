@@ -86,3 +86,9 @@ isFull - 스택이 가득 찼는지 여부~~
 - Class 멤버함수 외부선언
 - 동적할당 & delete
 - nullptr
+### 2. BOJ문제풀이
+- [BOJ1918](https://www.acmicpc.net/problem/1918)
+- [BOJ4949](https://www.acmicpc.net/problem/4949)
+- [BOJ9012](https://www.acmicpc.net/problem/9012)
+- [BOJ10773](https://www.acmicpc.net/problem/10773)
+- [BOJ10828](https://www.acmicpc.net/problem/10828)
