@@ -92,3 +92,7 @@ isFull - 스택이 가득 찼는지 여부~~
 - [BOJ9012](https://www.acmicpc.net/problem/9012)
 - [BOJ10773](https://www.acmicpc.net/problem/10773)
 - [BOJ10828](https://www.acmicpc.net/problem/10828)
+
+## 2020.5.27
+### 1. BOJ문제풀이
+- [BOJ10799](https://www.acmicpc.net/problem/10799)
