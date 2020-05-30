@@ -96,3 +96,15 @@ isFull - 스택이 가득 찼는지 여부~~
 ## 2020.5.27
 ### 1. BOJ문제풀이
 - [BOJ10799](https://www.acmicpc.net/problem/10799)
+
+## 2020.5.30
+### C++ Value type
+- glvalue(lvalue + xvalue)
+- rvalue(prvalue + xvalue)
+- lvalue : identity를 가지면서 move될 수 없는 값
+- xvalue : identity를 가지면서 move될 수 있는 값
+- prvalue : identity를 가지지 않으면서 move될 수 있는 값
+### C++ 참조자
+- 좌측 값 참조 &
+- 우측 값 참조 && 와 std::move()
+	- [Rvalue reference](https://spikez.tistory.com/305)
