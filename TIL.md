@@ -104,6 +104,7 @@ isFull - 스택이 가득 찼는지 여부~~
 - lvalue : identity를 가지면서 move될 수 없는 값
 - xvalue : identity를 가지면서 move될 수 있는 값
 - prvalue : identity를 가지지 않으면서 move될 수 있는 값
+- [Value Type reference](https://dydtjr1128.github.io/cpp/2019/06/10/Cpp-values.html)
 ### C++ 참조자
 - 좌측 값 참조 &
 - 우측 값 참조 && 와 std::move()
