@@ -3,96 +3,102 @@
 #include <vector>
 using namespace std;
 
+bool CheckVps(vector<char>&, char);	//괄호의 짝이 맞는지 검사
+
 int main() {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	char str[35];
-	vector<int> v;
+	vector<int> vi;		//'(' => -1 , '[' => -2로 저장
+	vector<char> vc;	//괄호의 짝이 맞는지 검사용
+	char str[33];
+	int len;
 	int i;
-	bool flag = true;
+	
 	scanf("%s", str);
-	int len = strlen(str);
+	len = strlen(str);
 
 	for (i = 0; i < len; i++) {
-		if (str[i] == '(')
-			v.push_back(-1);
+		if (str[i] == '(') {
+			vi.push_back(-1);
+			vc.push_back(str[i]);
+		}
 
-		if (str[i] == '[')
-			v.push_back(-2);
+		else if (str[i] == '[') {
+			vi.push_back(-2);
+			vc.push_back(str[i]);
+		}
 
-		if (str[i] == ')') {
-			if (!v.empty() && v.back() == -1) {
-				v.pop_back();
-				v.push_back(2);
+		else if (str[i] == ')') {
+			if (!CheckVps(vc, str[i])) {
+				printf("0");
+				return 0;
+			}
+
+			if (vi.back() == -1) {
+				vi.pop_back();
+				vi.push_back(2);
 			}
 			else {
 				int t = 0;
-				while (1) {
-					if (!v.empty()) {
-						if (v.back() < 0) {
-							if (v.back() == -1)
-								break;
-							else {
-								flag = false;
-								break;
-							}
-						}
-						else {
-							t += v.back();
-							v.pop_back();
-						}
-					}
+				while (vi.back() != -1) {
+					t += vi.back();
+					vi.pop_back();
 				}
-				if (flag) {
-					v.pop_back();
-					v.push_back(t * 2);
-				}
-				else break;
+				vi.pop_back();
+				vi.push_back(t * 2);
 			}
 		}
 
-		if (str[i] == ']') {
-			if (!v.empty() && v.back() == -2) {
-				v.pop_back();
-				v.push_back(3);
+		else if (str[i] == ']') {
+			if (!CheckVps(vc, str[i])) {
+				printf("0");
+				return 0;
+			}
+
+			if (vi.back() == -2) {
+				vi.pop_back();
+				vi.push_back(3);
 			}
 			else {
 				int t = 0;
-				while (1) {
-					if (!v.empty()) {
-						if (v.back() < 0) {
-							if (v.back() == -2)
-								break;
-							else {
-								flag = false;
-								break;
-							}
-						}
-						else {
-							t += v.back();
-							v.pop_back();
-						}
-					}
+				while (vi.back() != -2) {
+					t += vi.back();
+					vi.pop_back();
 				}
-				if (flag) {
-					v.pop_back();
-					v.push_back(t * 3);
-				}
-				else break;
+				vi.pop_back();
+				vi.push_back(t*3);
 			}
 		}
 	}
-	if (!flag) {
-		printf("0");
-		return 0;
+	int answer = 0;
+	while (!vi.empty()) {
+		if (vi.back() < 0) {	//여는괄호만 있고, 닫는괄호가 없는 경우
+			printf("0");
+			return 0;
+		}
+		answer += vi.back();
+		vi.pop_back();
 	}
-	int sum = 0;
-	vector<int>::iterator it;
-	for (it = v.begin(); it != v.end(); it++) {
-		sum += *it;
-	}
-	printf("%d", sum);
 
+	printf("%d", answer);
 	return 0;
+}
+
+bool CheckVps(vector<char>& vc, char c) {
+	if (c == ')') {
+		if (!vc.empty() && vc.back() == '(') {
+			vc.pop_back();
+			return true;
+		}
+		else return false;
+	}
+
+	if (c == ']') {
+		if (!vc.empty() && vc.back() == '[') {
+			vc.pop_back();
+			return true;
+		}
+		else return false;
+	}
 }
