@@ -2,59 +2,39 @@
 #include <vector>
 using namespace std;
 
+typedef pair<int, int> P;
+
 int main() {
 
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
 	int n, i;
+	long long answer = 0;
+	int t;
+	vector<P> stack;
 	scanf("%d", &n);
 
-	long long int t;
-	vector<long long> stack;
-	long long answer = 0;
 	for (i = 1; i <= n; i++) {
-		scanf("%lld", &t);
-		int cnt = 0;
+		scanf("%d", &t);
+		P p(t, 1);
 
-		if (!stack.empty()) {
-			if (t > stack.back()) {
-				cnt = 0;
-				while (1) {
-					if (!stack.empty() && stack.back() < t) {
-						stack.pop_back();
-						cnt++;
-					}
-					else
-						break;
+
+		while (!stack.empty()) {
+			if (stack.back().first <= t) {
+				answer += stack.back().second;
+				if (stack.back().first == t) {
+					p.second += stack.back().second;
 				}
-				if (stack.empty())
-					answer += cnt;
-				else
-					answer += cnt + 1;
+				stack.pop_back();
 			}
-			else if (t == stack.back()) {
-				cnt = 0;
-				vector<long long>::reverse_iterator rit = stack.rbegin();
-				while (1) {
-					if (rit != stack.rend() && *rit == t) {
-						cnt++;
-					}
-					else {
-						cnt++;
-						break;
-					}
-					rit++;
-				}
-				answer += cnt;
-			}
-			else if (t < stack.back()) {
-				answer++;
+			else {
+				if (!stack.empty()) answer++;
+				break;
 			}
 		}
-		stack.push_back(t);
+		stack.push_back(p);
 	}
-
 	printf("%lld", answer);
 	return 0;
 }
