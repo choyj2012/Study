@@ -1,63 +1,59 @@
-#include <stdio.h>
 #include <iostream>
+#include <stdio.h>
 #include <string>
 using namespace std;
 
+string str, word;
+
 int main() {
+
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	string str, word;
-	
 	cin >> word;
-	int wlen = word.size();
-
 	cin >> str;
-	int front = 0;
-	int back = str.size() - 1;
-	int i;
-	bool flag1 = false, flag2 = false;
 
-	while (front<=back) {
-		if (str.size() < wlen) break;
-		while (front <= back) {
-			string part = str.substr(front, wlen);
-			if (word == part) {
-				string p1 = str.substr(0, front);
-				string p2 = str.substr(front + wlen, str.size()-(front+wlen-1));
-				str = p1 + p2;
-				if (back >= front && back <= front + wlen - 1) {
-					back = back - wlen + 1;
-				}
-				else
-					back -= wlen;
-				if (front > 0) front--;
-				flag1 = 1;
+	int wlen = word.size();
+	int slen = str.size();
+	int start = 0;
+	int end = slen - 1;
+	int i, j;
+	bool flag1 = true, flag2 = true;
+
+	while (1) {
+		flag1 = 1;
+		flag2 = 1;
+
+		for (i = start; i <= slen; i++) {
+			if (word == str.substr(i, wlen)) {
+				str.erase(i, wlen);
+				flag1 = false;
+				slen = str.size();
+				if (i - wlen - wlen < 0) start = 0;
+				else start = i - wlen - wlen;
+
+				if (end > slen) end = slen;
+				
 				break;
 			}
-			front++;
 		}
-		if (str.size() < wlen) break;
-		if (!flag1) break;
-		while (front <= back) {
-			string part = str.substr(back - wlen + 1, wlen);
-			if (word == part) {
-				string p1 = str.substr(0, back - wlen+1);
-				string p2 = str.substr(back + 1, str.size() - back);
-				str = p1 + p2;
-				if (front >= back - wlen + 1 && front <= back)
-					front = back - wlen - wlen;
-				if (front < 0) front = 0;
-				back = back - wlen + 1;
-				flag2 = 1;
+
+		if (flag1) break;
+
+		for (j = end; j >= 0; j--) {
+			if (word == str.substr(j, wlen)) {
+				str.erase(j, wlen);
+				slen = str.size();
+				end = j;
+				flag2 = false;
+
 				break;
 			}
-			back--;
 		}
-		if (!flag2) break;
+
+		if (flag2) break;
 	}
 
 	cout << str << endl;
 	return 0;
 }
-
