@@ -35,6 +35,7 @@ int main() {
 	cout << Q->Dequeue() << endl;
 	cout << Q->Dequeue() << endl;
 	cout << Q->isEmpty() << endl;
+	delete Q;
 	return 0;
 }
 
