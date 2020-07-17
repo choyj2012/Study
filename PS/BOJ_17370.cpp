@@ -3,44 +3,58 @@
 using namespace std;
 
 int n;
-int answer;
-
-void serch(int x, int y, int px, int py, int cnt, vector<vector<int>> check);
-
+int answer = 0;
+void solve(int x, int y, vector<pair<int, int>> v, int type);
 int main() {
 
-	scanf("%d", &n);
-	vector<vector<int>> check(60);
-	check[0 + 30].push_back(0);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 
-	serch(0, 1, 0, 0, 0, check);
+	vector<pair<int, int>> visited;
+	scanf("%d", &n);
+
+	visited.push_back({ 0, 0 });
+	solve(0, 1, visited, 1);
 
 	printf("%d", answer);
+	return 0;
 }
 
-void serch(int x, int y, int px, int py, int cnt, vector<vector<int>> check) {
 
-	printf("%d %d\n", x, y);
-	if (cnt == n) return;
-	//방문했던곳인 경우
-	if (find(check[x + 30].begin(), check[x + 30].end(), y) != check[x+30].end()){
-		if(cnt == n)
-			answer++;
+void solve(int x, int y, vector<pair<int, int>> v, int type) {
+	
+	if (v.size() == n + 1) {
+		for (auto i = v.begin(); i != v.end(); i++) {
+			if ((*i).first == x && (*i).second == y) {
+				answer++;
+				return;
+			}
+		}
 		return;
 	}
-	
-	check[x + 30].push_back(y);
 
-	if (px != x + 1 || px != y)
-		serch(x + 1, y, cnt + 1, x, y, check);
-	
-	if (px != x - 1 || px != y)
-		serch(x - 1, y, cnt + 1, x, y, check);
+	for (auto i = v.begin(); i != v.end(); i++) {
+		if ((*i).first == x && (*i).second == y) {
+			return;
+		}
+	}
 
-	if((x%2==0 && y%2==0) || (x%2==1 && y%2==1) && (px != x || px != y + 1))
-		serch(x, y + 1, cnt + 1, x, y, check);
-	else {
-		if(px != x || px != y-1)
-			serch(x, y - 1, cnt + 1, x, y, check);
+	v.push_back({ x, y });
+
+	if (type == 1 || type == 2) {
+		solve(x + 1, y, v, 3);
+		solve(x - 1, y, v, 4);
+	}
+
+	else if (type == 3) {
+		solve(x + 1, y, v, 3);
+		if ((x + y) % 2 == 0) solve(x, y + 1, v, 1);
+		else solve(x, y - 1, v, 2);
+	}
+
+	else if (type == 4) {
+		solve(x - 1, y, v, 4);
+		if ((x + y) % 2 == 0) solve(x, y + 1, v, 1);
+		else solve(x, y - 1, v, 2);
 	}
 }
