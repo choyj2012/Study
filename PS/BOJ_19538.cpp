@@ -1,7 +1,3 @@
-/*
-*	2020UCPC ¿¹¼± G
-*/
-
 #include <stdio.h>
 #include <vector>
 #include <deque>
