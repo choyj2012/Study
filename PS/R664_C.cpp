@@ -22,26 +22,25 @@ int main() {
 	for (int i = 0; i < m; i++) {
 		scanf("%d", &J[i]);
 	}
+	int answer = 1023;
+	for (int k = 1023; k >= 0; k--) {
 
-	sort(I, I + n, compare);
-	sort(J, J + m, compare);
-	int ctmp;
-	int c = 0;
-	
-	for (int i = 0; i < n; i++) {
-		int min = MAX;
-		for (int j = 0; j < m; j++) {
-
-			ctmp = (I[i] & J[j]);
-
-			if ((c | min) > (c | ctmp)) {
-				min = ctmp;
+		bool flag = true;
+		for (int i = 0; i < n; i++) {
+			bool checki = false;
+			for (int j = 0; j < m; j++) {
+				if (((I[i] & J[j]) | k) == k) {
+					checki = true;
+					break;
+				}
+			}
+			if (checki == false) {
+				flag = false;
+				break;
 			}
 		}
-
-		c = (c | min);
+		if (flag) answer = k;
 	}
-
-	printf("%d", c);
+	printf("%d", answer);
 	return 0;
 }

@@ -7,7 +7,7 @@ int T;
 
 int main() {
 
-//	freopen("input.txt", "r", stdin);
+	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 	
 	scanf("%d", &T);
@@ -17,7 +17,7 @@ int main() {
 		int cnt = 0;
 		for (int i = 0; i < 4; i++) {
 			scanf("%d", &b[i]);
-			if (b[i] == 0) zero = true;
+			if (i < 3 && b[i] == 0) zero = true;
 			if (b[i] % 2 == 1) cnt++;
 		}
 		if (cnt <= 1) {
