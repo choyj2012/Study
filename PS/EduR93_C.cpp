@@ -20,6 +20,7 @@ int main() {
 		}
 
 		unordered_map<int, long long> m;
+		m[0] = 1;
 		for (int i = 1; i <= n; i++) {
 			v[i] -= i;
 			if (m.find(v[i]) != m.end()) m[v[i]]++;
@@ -29,7 +30,6 @@ int main() {
 		long long cnt = 0;
 		for (auto i = m.begin(); i != m.end(); i++) {
 			cnt += (*i).second * ((*i).second - 1) / 2;
-			if ((*i).first == 0) cnt += (*i).second;
 		}
 		printf("%lld\n", cnt);
 	}
