@@ -4,10 +4,7 @@
 
 using namespace std;
 
-const char num[] = {
-		'0', '1', '2', '3', '4', '5', '6', '7',
-		'8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
-};
+string num = "0123456789ABCDEF";
 
 vector<int> next_num(vector<int> now, int n) {
 
@@ -26,9 +23,6 @@ vector<int> next_num(vector<int> now, int n) {
 }
 string solution(int n, int t, int m, int p) {
 	string answer = "";
-
-
-
 	vector<int> now;
 	now.push_back(0);
 
@@ -36,19 +30,17 @@ string solution(int n, int t, int m, int p) {
 	int pcnt = 0;
 	while (1) {
 
-		for (int i = now.size(); i > 0; i--) {
+		for (int i = now.size() - 1; i >= 0; i--) {
 			cnt++;
 
 			if ((cnt - p) % m == 0) {
-				answer.push_back(num[now[i - 1]]);
+				answer += num[now[i]];
 				pcnt++;
 				if (pcnt == t) return answer;
 			}
 		}
 		now = next_num(now, n);
-
 	}
-	return answer;
 }
 
 int main() {
