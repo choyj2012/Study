@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InputTag</title>
+</head>
+<body>
+    <form method="get">
+        method="get" 주소에 데이터를 입력<br />
+        <input type="text" name="serch"/>
+        <input type="submit" value="GET" />
+    </form>
+    
+    <form method="post">
+        method="post" 별도로 데이터를 전송<br />
+        <input type="text" name="serch"/>
+        <input type="submit" value="POST"/>
+    </form>
+
+    <hr />
+
+    <form>
+        <label for="name">ID : </label>
+        <input type="text" name="name" id="name"/><br />
+        PW : <input type="password" name="password" /><br />
+        첨부파일 <input type="file" name="file" /><br />
+        <input type="submit" />
+    </form>
+
+    <hr />
+
+    <form>
+        text<input type="text" /><br />
+        button<input type="button" /><br />
+        checkbox<input type="checkbox" />
+        <input type="checkbox" /><br />
+        file<input type="file" /><br />
+        hidden<input type="hidden" /><br />
+        image<input type="image" src="https://placehold.it/50x50"/><br />
+        password<input type="password" /><br />
+        radio<input type="radio" name="r1"/>
+        <input type="radio" name="r1" /><br />
+        reset<input type="reset" /><br />
+        submit<input type="sumbit" />
+    </form>
+
+    <hr />
+
+    <form>
+        <input type="color" /><br />
+        <input type="date" /><br />
+        <input type="datetime" /><br />
+        <input type="datetime-local" /><br />
+        <input type="email" /><br />
+        <input type="month" /><br />
+        <input type="number" /><br />
+        <input type="range" /><br />
+        <input type="search" /><br />
+        <input type="tel" /><br />
+        <input type="time" /><br />
+        <input type="url" /><br />
+        <input type="week" />
+    </form>
+
+    <hr />
+
+    <textarea name="textarea" id="textarea1" cols="30" rows="10">textarea
+textarea</textarea>
+    <textarea name="textarea" id="textarea1" cols="30" rows="10">
+        textarea
+        textarea
+    </textarea>
+    
+    <hr />
+    <select>
+        <option>1번</option>
+        <option>2번</option>
+        <option>3번</option>
+    </select>
+
+    <select>
+        <optgroup label="first">
+            <option value="">A</option>
+            <option value="">B</option>
+            <option value="">C</option>
+        </optgroup>
+        <optgroup label="second">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="">c</option>
+        </optgroup>
+    </select>
+
+    <hr />
+    <fieldset>
+        <legend>로그인</legend>
+        <table>
+            <tr>
+                <td><label for="ID">ID</label></td>
+                <td><input type="text" id="ID"/></td>
+            </tr>
+            <tr>
+                <td><label for="PW">PW</label></td>
+                <td><input type="password" id="PW" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Login" />
+    </fieldset>
+</body>
+</html>
