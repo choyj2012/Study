@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selector</title>
+    <style>
+        /* * {color : rgb(255, 0, 0);} 전체 선택자*/
+        
+        /*태그 선택자
+        h1 {color : white;}
+        p {color : green;}
+        h1, p {margin-left: 100px;} */
+
+        /*ID 선택자*/
+        #header {
+            width: 800px; margin:0 auto;
+            color: black;
+            background : lightgreen;
+        }
+        #wrap {
+            width: 800px; margin:0 auto;
+            overflow: hidden;
+        }
+        #aside {
+            width: 200px; float: left;
+            background: blue;
+        }
+        #content {
+            width: 600px; float: right;
+            background: green;
+        }
+
+        /*클래스 선택자*/
+        .select {color: red;}
+        .odd {
+            width: 150px;
+            background: black;
+        }
+        .even {
+            width: 100px;
+            background: yellow;
+        }
+        p.even {
+            width: 150px;
+            background: red;
+        }
+        .list {
+            display: inline-block;
+        }
+
+        /*속성 선택자*/
+        input[type=text] {
+            background: skyblue;
+        }
+        input[type=password] {
+            background: pink;
+        }
+
+        /*문자열 속성 선택자*/
+        a[href$=com]{
+            color: green;
+        }
+        
+        /*후손 선택자*/
+        div.list-div ul {
+            color: orange;
+        }
+
+        /*자손 선택자*/
+        div.list-div > ol > li {
+            border-bottom: 1px solid black;
+        }
+
+        /*동위 선택자*/
+        div.div-heading h1 + h2 {
+            color: red;
+        }
+
+        div.div-heading h1 ~ h2{
+            background-color: orange;
+        }
+
+        .touch-pad td {
+            width: 50px; height: 50px;
+            text-align: center;
+        }
+
+        /*반응 선택자*/
+        .touch-pad td:active {
+            background-color: blue;
+            color: white;
+        }
+
+        .touch-pad td:hover {
+            background-color: skyblue;
+        }
+
+        /*상태 선택자*/
+        input:enabled { background-color: green;}
+        input:disabled {background-color: red;}
+        input:focus {background-color: lightgreen;}
+
+        input[type=checkbox]:checked + div.div-check {
+            height: 0px;
+        }
+
+        .div-check {
+            overflow: hidden;
+            width: 650px; height: 300px;
+
+            -ms-transition-duration: 1s;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            transition-duration: 1s;
+        }
+
+        /*구조 선택자*/
+        ul.ul-struct { display:inline-block; overflow: hidden; }
+        .ul-struct li {
+            list-style: none;
+            float: left; padding: 15px;
+        }
+
+        .ul-struct li:first-child { border-radius: 10px 0 0 10px;}
+        .ul-struct li:last-child {border-radius: 0 10px 10px 0;}
+
+        .ul-struct li:nth-child(2n) { background-color: lightgreen;}
+        .ul-struct li:nth-child(2n+1) {background-color: skyblue;}
+
+        /*형태 구조 선택자*/
+        .heading2 h1:first-of-type { color: red;}
+        .heading2 h1:last-of-type { background-color: blue;}
+        .heading2 h2:first-of-type {color:red;}
+        .heading2 h3:first-of-type {color:red;}
+        .heading2 h3:last-of-type { background-color: blue;}
+
+        /*문자 선택자*/
+        div.story p::first-letter { font-size: 3em;}
+        div.story p::first-line { color: red;}
+    </style>
+</head>
+<body>
+    <h1>heading 1</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus architecto corrupti exercitationem eveniet iure facere numquam impedit temporibus maiores dolorum est ab, earum tempore, inventore ea. Laborum, ducimus. Nostrum, molestiae.</p>
+    <hr />
+
+    <div id="header">
+        <h1>div id="header"</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>Aside</h1>
+        </div>
+        <div id="content">
+            <h1>Content</h1>
+        </div>
+    </div>
+    <hr />
+
+    <p class="even">class = p.even</p>
+    <ul>
+        <li class="select odd">A</li>
+        <li class="even">B</li>
+        <li class="select odd">C</li>
+        <li class="even">D</li>
+    </ul>
+    <hr />
+
+    <input type="text" placeholder="ID"/><br />
+    <input type="password" placeholder="PW"/>
+    <hr />
+
+    <a href="http://naver.com">naver.com</a>
+    <a href="#">ERROR</a>
+    <hr />
+
+    <div class="list-div">
+        <ol class="list">
+            <li>AAA</li>
+            <li>BBB</li>
+            <li>CCC</li>
+        </ol>
+        <ul class="list">
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul>
+    </div>
+    <hr />
+ 
+    <div class="div-heading">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h2>H2</h2>
+        <h2>H2</h2>
+    </div>
+    <hr />
+
+    <table border="2" class="touch-pad">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>0</td>
+            <td>#</td>
+        </tr>
+    </table>
+    <hr />
+
+    <input value="enabled" /><br />
+    <input value="disabled" disabled="disabled"/><br />
+
+    <input type="checkbox" />
+    <div class="div-check">
+        <h1>HELLO</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, itaque? Perferendis dolor, ducimus autem qui natus possimus facere labore, reiciendis numquam ipsum nobis odio quas quidem harum cum molestiae odit?</p>
+    </div>
+    <hr />
+
+    <span>
+    <ul class="ul-struct">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+    <div class="heading2">
+        <h1>11111111</h1>
+        <h2>22222222</h2>
+        <h3>33333333</h3>
+        <h1>11111111</h1>
+        <h2>22222222</h2>
+        <h3>33333333</h3>
+    </div>
+    <hr />
+
+    <div class="story">
+        <h1>Story</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quos ipsa rem corrupti. Cupiditate fugiat minus alias, blanditiis nihil eaque magnam at repellendus natus aliquid incidunt earum illo voluptate nisi!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab unde iure velit veritatis dolor, distinctio beatae sint alias eius fugiat ad illo explicabo asperiores reprehenderit dolorem facilis nesciunt consequatur non.</p>
+    </div>
+</body>
+</html>
