@@ -97,9 +97,9 @@
         }
 
         /*상태 선택자*/
-        input:enabled { background-color: green;}
-        input:disabled {background-color: red;}
-        input:focus {background-color: lightgreen;}
+        div.state input:enabled { background-color: green;}
+        div.state input:disabled {background-color: red;}
+        div.state input:focus {background-color: lightgreen;}
 
         input[type=checkbox]:checked + div.div-check {
             height: 0px;
@@ -135,9 +135,25 @@
         .heading2 h3:first-of-type {color:red;}
         .heading2 h3:last-of-type { background-color: blue;}
 
-        /*문자 선택자*/
+        /*시작 문자 선택자*/
         div.story p::first-letter { font-size: 3em;}
         div.story p::first-line { color: red;}
+        /*전후 문자 선택자*/
+        div.story p { counter-increment: rint;}
+        div.story p::before{content:counter(rint) ".";}
+        div.story p::after{content: " - " attr(data-page) " page";}
+        /*반응 문자 선택자*/
+        div.story p::selection{background: purple; color:white;}
+
+        /*링크 선택자*/
+        div.link a {text-decoration: none;}
+        div.link a:visited {color: red;}
+        div.link a:link::after { content: ' - ' attr(href);}
+
+        /*부정 선택자*/
+        div.not input:not([type=password]) {
+            background: red;
+        }
     </style>
 </head>
 <body>
@@ -221,9 +237,10 @@
     </table>
     <hr />
 
-    <input value="enabled" /><br />
-    <input value="disabled" disabled="disabled"/><br />
-
+    <div class="state">
+        <input value="enabled" /><br />
+        <input value="disabled" disabled="disabled"/><br />
+    </div>
     <input type="checkbox" />
     <div class="div-check">
         <h1>HELLO</h1>
@@ -252,8 +269,20 @@
 
     <div class="story">
         <h1>Story</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quos ipsa rem corrupti. Cupiditate fugiat minus alias, blanditiis nihil eaque magnam at repellendus natus aliquid incidunt earum illo voluptate nisi!</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab unde iure velit veritatis dolor, distinctio beatae sint alias eius fugiat ad illo explicabo asperiores reprehenderit dolorem facilis nesciunt consequatur non.</p>
+        <p data-page="52">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quos ipsa rem corrupti. Cupiditate fugiat minus alias, blanditiis nihil eaque magnam at repellendus natus aliquid incidunt earum illo voluptate nisi!</p>
+        <p data-page="234">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab unde iure velit veritatis dolor, distinctio beatae sint alias eius fugiat ad illo explicabo asperiores reprehenderit dolorem facilis nesciunt consequatur non.</p>
+    </div>
+
+    <div class="link">
+        <h1><a>nothing</a></h1><br />
+        <h1><a href="https://acmicpc.net">BOJ</a></h1>
+    </div>
+
+    <div class="not">
+        <input type="password" />
+        <input type="text" />
+        <input type="password" />
+        <input type="text" />
     </div>
 </body>
 </html>

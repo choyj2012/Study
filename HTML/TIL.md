@@ -12,3 +12,6 @@ HTML TIL
 
 ## 2020.09.22
 - ~chapter 3.12
+
+## 2020.09.23
+- chapter3 end
