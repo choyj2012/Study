@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visibility Attribute</title>
+
+    <style>
+        body > * {
+            border: black solid 1px;
+        }
+        #box {
+            display: inline;
+
+            background-color: greenyellow;
+            width: 300px; height: 50px; /*inline -> widht, height 적용x*/
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #box2 {
+            display: inline-block;
+
+            background-color: greenyellow;
+            width: 300px; height: 50px;
+            margin: 10px;
+            padding: 10px 0 10px 0;
+        }
+
+        #box3 {
+            background-color: red;
+            color: white;
+
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <span>Dummy</span>
+    <div id="box">
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, ut!</span>
+    </div>
+    <span>Dummy</span>
+    <hr />
+
+    <span>Dummy</span>
+    <div id="box2">
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, ut!</span>
+    </div>
+    <span>Dummy</span>
+    <hr />
+
+    <span>Dummy</span>
+    <div id="box3">
+        <table>
+            <tr>
+                <td>item1</td>
+                <td>item2</td>
+            </tr>
+            <tr>
+                <td>item1</td>
+                <td>item2</td>
+            </tr>
+        </table>
+    </div>
+    <span>Dummy</span>
+    <hr />
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Attribute</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .box {
+            margin: 10px; padding: 10px;
+            width: 100px; height: 100px;
+            border: 10px solid white;
+        }
+
+        #box1 {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box2 {
+            background: green;
+            box-sizing: content-box;
+        }
+        
+        #box3 {
+            background: yellow;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="box"></div>
+
+    <div id="box2" class="box"></div>
+
+    <div id="box3" class="box"></div>
+</body>
+</html>

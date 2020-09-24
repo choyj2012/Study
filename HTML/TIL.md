@@ -15,3 +15,6 @@ HTML TIL
 
 ## 2020.09.23
 - chapter3 end
+
+## 2020.09.24
+- ~chpater 4.4
