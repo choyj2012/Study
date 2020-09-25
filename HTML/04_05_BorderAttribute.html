@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Attribute</title>
+    
+    <style>
+        #box {
+            border-width: thick;
+            border-style: dashed;
+            border-color: black;
+            /*같음*/
+            border: thick dashed black;
+
+            border-left-color: red;
+            border-top-style: dotted;
+            border-right-width: thin;
+        }
+
+        #box2 {
+            border: thick dashed black;
+            border-radius: 20px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, optio.</h1>
+    </div>
+    <hr />
+
+    <div id="box2">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, optio.</h1>
+    </div>
+</body>
+</html>
