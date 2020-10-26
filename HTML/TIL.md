@@ -14,10 +14,13 @@ HTML TIL
 - ~chapter 3.12
 
 ## 2020.09.23
-- chapter3 end
+- ~chapter3 end
 
 ## 2020.09.24
-- ~chpater 4.4
+- ~chapter 4.4
 
 ## 2020.09.25
-- ~chpater 4.5
+- ~chapter 4.5
+
+## 2020.10.26
+- ~chapter 4.7

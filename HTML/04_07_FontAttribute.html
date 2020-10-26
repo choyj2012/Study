@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Attribute</title>
+
+    <style>
+        .a { font-size: 32px; }
+        .b { font-size: 2em; }
+        .c { font-size: large; }
+        .d { font-size: small; }
+
+        .font_arial { 
+            font-size: 30px;
+            font-family: 'yeah없는것', Arial; 
+        }
+        .font_roman {
+            font-size: 30px;
+            font-family: 'Times New Roman', Arial;
+        }
+
+        .font_size {
+            font-size: 30px;
+        }
+
+        .font_style {
+            font-size: 2em;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .font_center {
+            text-align: center;
+        }
+
+        .font_right{
+            text-align: right;/*오른쪽정렬*/
+        }
+
+        .button {
+            width: 150px; height: 70px; /*버튼의 높이 70px*/
+            background-color: #FF6A00;
+            border: 10px solid #FFFFFF;
+            border-radius: 30px;
+            box-shadow: 5px 5px 5px #A9A9A9;
+        }
+
+        .button > a {
+            line-height: 70px;  /*70px로 높이 맞춤(수직 가운데정렬)*/
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello h1</h1>
+    <p class="a">Hello 32px</p>
+    <p class="b">Hello 2em</p>
+    <p class="c">Hello large</p>
+    <p class="d">Hello small</p>
+
+    <p class="font_arial">Hello Arial</p>
+    <p class="font_roman font_right">Hello Roman</p>
+    <p class="font_size font_style">YEAH</p>
+
+    <div class="button">
+        <a href="#" class="font_big font_style font_center">Click</a>
+    </div>
+
+    <span class="font_center">(span)text-align: center</span>
+    <!-- span은 inline이므로 너비가없다 -> 중앙없음 -> text-align 사용불가 -->
+    <p class="font_center">(p)text-align: center</p>
+</body>
+</html>
